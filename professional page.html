@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Professional Page</title>
+        <style>
+            .flex-container 
+            {
+                display: flex; /* Enable flexbox for horizontal alignment */
+                justify-content: flex-start; /* Align items to the left */
+                align-items: flex-start; /* Align items to the top */
+                margin-top: 100px;
+            }
+
+            .container 
+            {
+                width: 700px;
+                height: 700px;
+                margin-left: 50px;
+                padding-bottom: 70px;
+                background: #3f7cf2;
+                border: solid 10px #000000;
+                position: relative;
+            }
+
+            .slide_img 
+            {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            .slide_img img 
+            {
+                width: 100%;
+                height: 100%;
+            }
+
+            #i1,
+            #i2,
+            #i3 
+            {
+                display: none;
+            }
+
+            .pre,
+            .nxt 
+            {
+                margin-top: 400px;
+                width: 12%;
+                position: absolute;
+                top: 0;
+                z-index: 99;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+            }
+
+            .align 
+            {
+                transition: all 0.5s ease;
+            }
+
+            .align:hover 
+            {
+                background: rgba(88, 88, 88, 0.5);
+                padding: 10px 15px;
+                border-radius: 5px;
+            }
+
+            .pre 
+            {
+                left: 0;
+            }
+
+            .nxt 
+            {
+                right: 0;
+            }
+
+            .nav 
+            {
+                width: 100%;
+                height: 11px;
+                bottom: 12%;
+                position: absolute;
+                text-align: center;
+                z-index: 99;
+            }
+
+            .dots 
+            {
+                top: -5px;
+                width: 18px;
+                height: 18px;
+                margin: 0 4px;
+                position: relative;
+                border-radius: 50%;
+                display: inline-block;
+                background: rgba(0, 0, 0, .6);
+            }
+
+            #i1:checked~#one,
+            #i2:checked~#two,
+            #i3:checked~#three 
+            {
+                z-index: 9;
+            }
+
+            #i1:checked~.nav #dot1,
+            #i2:checked~.nav #dot2,
+            #i3:checked~.nav #dot3 
+            {
+                background:#3f7cf2;
+            }
+
+            .beside 
+            {
+
+            display: flex;               /* Activates flexbox */
+            justify-content: center;      /* Aligns the items horizontally */
+            gap: 20px;                    /* Adds space between the items */
+            margin-top: 30px;
+            
+            }
+
+            .vertical-line 
+            {
+                width: 5px;
+                height: 800px;
+                background-color: #000000;
+                margin-left: 25px;
+            }
+
+        </style>
+
+    </head>
+
+    <body style="margin: 0; background-color: #06327d;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding: 0 20px;">
+            <div>
+                <img src="Assets/My Logo.png" height="100px" width="150px" style="margin-bottom: -10px;">
+            </div>
+
+            <div>
+                <a class="align" style="text-decoration: none; color: white; margin-right: 10px;" href="index.html">HOME</a>
+                <a style="text-decoration: none; color: white; margin-right: 10px; background-color: #3f7cf2; padding: 10px 15px; border-radius: 5px;" href="personality.html">PROFESSIONAL PAGE</a>
+                <a class="align" style="text-decoration: none; color: white; margin-right: 20px;" href="personality.html">MY PERSONALITY</a>
+                <a class="align" style="text-decoration: none; color: white; margin-right: 20px;" href="development.html">MY DEVELOPMENT</a>
+                <a class="align" style="text-decoration: none; color: white; margin-right: 20px;" href="story.html">MY STORY</a>
+                <a class="align" style="text-decoration: none; color: white; margin-right: 20px;" href="reference.html">REFERENCE</a>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="container">
+                <input type="radio" name="images" id="i1">
+                <input type="radio" name="images" id="i2">
+                <input type="radio" name="images" id="i3">
+
+                <div class="slide_img" id="one">
+                    <img src="Assets/My Vision.png">
+                    <label for="i3" class="pre">&#10094;</label>
+                    <label for="i2" class="nxt">&#10095;</label>
+                </div>
+
+                <div class="slide_img" id="two">
+                    <img src="Assets/My Mission.png">
+                    <label for="i1" class="pre">&#10094;</label>
+                    <label for="i3" class="nxt">&#10095;</label>
+                </div>
+
+                <div class="slide_img" id="three">
+                    <img src="Assets/Resume.png">
+                    <label for="i2" class="pre">&#10094;</label>
+                    <label for="i1" class="nxt">&#10095;</label>
+                </div>
+
+                <div class="nav">
+                    <label class="dots" id="dot1" for="i1"></label>
+                    <label class="dots" id="dot2" for="i2"></label>
+                    <label class="dots" id="dot3" for="i3"></label>
+                </div>
+            </div>
+
+            <div class="vertical-line"></div> <!--Vertical Line-->
+
+                <div>
+                    <div style=" text-align: center; width: 300px; margin-left: 25px; margin-top: 10px; line-height: 2; padding: 80px; background: white; width: 500px; border-radius: 10px;">
+                
+                        <h1 style="text-align: center; font-size: 70px; font-family: cursive; text-decoration: underline;">
+                            Future Career
+                        </h1>
+        
+                        <p style = "text-align: center; margin-right: 50px; margin-left: 50px; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            I have a deep passion for technology. The intricate workings of the technological domain
+                            fascinate me, with various fields working separately to execute distinct operations that
+                            collectively enhance the convenience of our lives. With this burning passion and an ongoing
+                           curiosity, I have decided to venture into the world of technology to satisfy my insatiable thirst for knowledge.
+                        </p>
+        
+                    </div>
+                </div>
+            </div>
+
+        <hr style="background: #000000; width: 98%; height: 5px; border: 0; margin-top: 20px;"> <!--Horizontal Line-->
+
+        <!--Below line-->
+        <div class="beside">
+
+            <div style="border-radius: 10px; padding: 50px; background: white; text-align: center; width: 300px; margin-left: 40px; margin-top: 30px; line-height: 2;  ">
+                
+                <h2 style="text-align: center; text-decoration: underline;">
+                    Job Description
+                </h2>
+        
+                <p>
+                    A programmer uses various programming languages to develop code that a computer can
+                    comprehend and execute. This encompasses the maintenance, debugging,
+                    and troubleshooting to ensure the program meets the required standard.
+                </p>
+        
+            </div>
+
+            <div style="border-radius: 10px; padding: 50px; background: white; text-align: center; width: 300px; margin-left: 40px; margin-top: 30px; line-height: 2;">
+        
+                <h2 style="text-align: center; text-decoration: underline;">
+                    Qualifications
+                </h2>
+        
+                <p>
+                    In many cases, a bachelor's degree in computer science, software engineering, or any IT-related field
+                    is required to become a programmer. However, some employers may accept a certificate along with relevant 
+                    experience. The most important factor is having the necessary skills to work as a programmer. 
+                </p>
+                
+            </div>
+        
+            <div style="border-radius: 10px; padding: 50px; background: white; text-align: center; width: 300px; margin-left: 40px; margin-top: 30px; line-height: 2; display: inline-block; ">
+                
+                <h2 style="text-align: center; text-decoration: underline;">
+                    Skills
+                </h2>
+        
+                <ul style="text-align: left;">
+                    <li>Analytical abilities</li>
+                    <li> Troubleshooting skills </li>
+                    <li> Concentration </li>
+                    <li> Detail oriented </li>       
+                    <li> Time management </li>    
+                    <li> Communication </li>    
+                    <li> Teamwork </li>    
+                    <li> Adaptive/Flexible </li>
+                    <li> Proficiency in programming languages </li> 
+                </ul>
+        
+            </div>
+
+        </div>
+
+        <div >
+            <img src="Assets/Footer Banner.png" alt="Banner" height="310px" width="100%" style="margin-top: 30px; border-radius: 10px;">
+        </div>
+        
+    </body>
+</html>
